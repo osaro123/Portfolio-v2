@@ -1,10 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { BiPlus } from 'react-icons/bi'
 import {BsMoonFill, BsSunFill} from "react-icons/bs"
 import { Link, NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const Navbar = () => {
+    useEffect(() => {
+        const selectedTheme = localStorage.getItem("theme")
+        if(selectedTheme){
+          document.body.classList.add(selectedTheme)
+        }else{
+          document.body.classList.add("light")
+        }
+      },[])
     const [darkTheme,setDarkTheme] = useState(false)
     const [ isOpen,setIsOpen ] = useState(false)
   return (
@@ -43,13 +51,19 @@ const Navbar = () => {
                     size={18} 
                     color='#706f6c' 
                     className='cursor-pointer'
-                    onClick={() => setDarkTheme(!darkTheme)}/>
+                    onClick={() => {
+                        setDarkTheme(!darkTheme)
+                        localStorage.setItem("theme","dark")
+                    }}/>
                 :
                 <BsMoonFill
                     size={18} 
                     color='#706f6c' 
                     className='cursor-pointer'
-                    onClick={() => setDarkTheme(!darkTheme)}
+                    onClick={() => {
+                        setDarkTheme(!darkTheme)
+                        localStorage.setItem("theme","light")
+                    }}
                 />
             }
         </div>

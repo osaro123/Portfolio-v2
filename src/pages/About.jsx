@@ -2,14 +2,22 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom'
 import { BsArrowUpRight, BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs'
-import { AiFillHtml5 } from 'react-icons/ai'
-import { FaCss3Alt, FaJs, FaReact } from "react-icons/fa"
-import { BiLogoFirebase, BiLogoTailwindCss } from "react-icons/bi"
-import { BsGit } from "react-icons/bs"
 import { HiMail } from 'react-icons/hi'
 import { motion } from 'framer-motion'
+import { skills } from '../constants/Skill'
+import Skill from '../components/Skill'
 
 const About = () => {
+    const fadeInAnimationVariants = {
+        initial:{
+            opacity: 0,
+            y: 100
+        },
+        animate:{
+            opacity: 1,
+            y: 0
+        }
+    }
   return (
     <div className="w-[90%] mx-auto max-w-[700px]">
         <Navbar/>
@@ -44,7 +52,7 @@ const About = () => {
                 <div>
                     <p>Have a question or just want to chat? Feel free to email me.</p>
                     <div className='pt-4 grid grid-col-2 gap-4'>
-                        <Link className='border-[#ccc] border-[1px] py-4 px-4 flex items-center justify-between rounded-md' to="https://www.youtube.com/" target='blank'>
+                        <Link className='border-[#ccc] border-[1px] py-4 px-4 flex items-center justify-between rounded-md' to="/contact" target='blank'>
                             <p className='flex items-center gap-2'><HiMail/>Email</p>
                             <BsArrowUpRight/>
                         </Link>
@@ -67,14 +75,10 @@ const About = () => {
                 <p className='text-[#706f6c]'>Skills</p>
                 <div>
                     <p>Technologies i'm familiar with.</p>
-                    <div className='py-8 flex flex-wrap gap-8'>
-                        <AiFillHtml5 size={80}/>
-                        <FaCss3Alt size={80}/>
-                        <FaJs size={80}/>
-                        <FaReact size={80}/>
-                        <BiLogoTailwindCss size={80}/>
-                        <BsGit size={80}/>
-                        <BiLogoFirebase size={80}/>
+                    <div className='flex gap-4 flex-wrap my-8'>
+                        {skills.map((skill,index) => (
+                            <Skill skill={skill} key={index} />
+                        ))}
                     </div>
                 </div>
             </div>

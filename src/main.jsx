@@ -6,6 +6,9 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Connect from './pages/Connect'
 import Project from './pages/Project'
+import Contact from './pages/Contact.jsx'
+
+
 
 const router = createBrowserRouter([
   {
@@ -23,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/projects",
     element: <Project/>
+  },
+  {
+    path: "/contact",
+    element: <Contact/>
   }
 ])
 
