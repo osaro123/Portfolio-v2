@@ -30,15 +30,15 @@ const Project = () => {
                 <div>
                     <p>I enjoy exploring my interests through projects</p>
                     <div>
-                        <h1 className='py-6'>Movie App</h1>
+                        <h1 className='py-6'>Blog API</h1>
                         <ul className='text-[14px] text-[#706f6c]'>
-                            <li>Vast Movie Database: Explore an extensive collection of films across genres and eras, from classics to the latest releases.</li>
-                            <li>Comprehensive Insights: Dive deep into movie details, including synopses, ratings, cast info, trailers, and more.</li>
-                            <li>Effortless Exploration: Robust search options and filters for easy navigation and finding your next movie obsession.</li>
+                            <li>CRUD Operations: Allows users to create, read, update, and delete blog posts effortlessly.</li>
+                            <li>User Management: Provides a user-friendly interface for managing user accounts and permissions.</li>
+                            <li>JWT Authentication: Implements secure authentication using JSON Web Tokens (JWT) to ensure data privacy and user authentication.</li>
+                            <li>Effortless Exploration: Offers robust search options and filters, enabling easy navigation through blog posts and aiding users in discovering content based on their preferences.</li>
                         </ul>
                         <div className='flex gap-2 items-center mt-4'>
-                            <Link to="https://stage-two-tau.vercel.app/" target='blank' className='bg-[#1e1e1e] text-white px-4 py-2 rounded-md'>View Live</Link>
-                            <Link to="https://github.com/osaro123/stage-two" target='blank' className='border-[1px] border-[#706f6c] px-4 py-2 rounded-md'>Code</Link>
+                            <Link to="https://github.com/osaro123/Blog-API" target='blank' className='bg-[#1e1e1e] text-white px-4 py-2 rounded-md'>View Code</Link>
                         </div>
                     </div>
                     <div>

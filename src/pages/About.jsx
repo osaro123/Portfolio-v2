@@ -5,7 +5,6 @@ import { BsArrowUpRight, BsGithub, BsLinkedin, BsTwitter } from 'react-icons/bs'
 import { HiMail } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 import { skills } from '../constants/Skill'
-import Skill from '../components/Skill'
 
 const About = () => {
     const fadeInAnimationVariants = {
@@ -77,7 +76,19 @@ const About = () => {
                     <p>Technologies i'm familiar with.</p>
                     <div className='flex gap-4 flex-wrap my-8'>
                         {skills.map((skill,index) => (
-                            <Skill skill={skill} key={index} />
+                            <motion.p 
+                            className='bg-[white] px-4 py-2 shadow-2xl rounded-md text-[#706f6c]'
+                            initial={{
+                                opacity: 0
+                            }}
+                            whileInView={{
+                                opacity: 1
+                            }}
+                            transition={{
+                                duration: 0.15,
+                                delay: 0.15 * index,
+                            }}
+                            key={index}>{skill}</motion.p>
                         ))}
                     </div>
                 </div>
